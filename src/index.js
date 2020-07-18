@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import isElectron from 'is-electron';
 import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
-import { Route, HashRouter, BrowserRouter, Switch } from 'react-router-dom';
+import { Route, HashRouter, BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import randomString from 'random-string';
 import Logger from './Logger';
 import debug from 'debug';
@@ -125,14 +125,10 @@ if (isElectron()) Router = HashRouter;
 else Router = BrowserRouter;
 
 domready(() => {
-  logger.debug('DOM ready');
-
   run();
 });
 
 function run() {
-  logger.debug('run() [environment:%s]', process.env.NODE_ENV);
-
   const peerId = randomString({ length: 8 }).toLowerCase();
   const urlParser = new URL(window.location);
   const parameters = urlParser.searchParams;
@@ -172,8 +168,6 @@ function run() {
     logger.error('Your browser is not supported [deviceInfo:"%o"]', device);
 
     unsupportedBrowser = true;
-  } else {
-    logger.debug('Your browser is supported [deviceInfo:"%o"]', device);
   }
 
   if (unsupportedBrowser || webrtcUnavailable) {
@@ -219,11 +213,11 @@ function run() {
                 <Router basename={basePath}>
                   <Suspense fallback={<LoadingView />}>
                     <Switch>
-                      <Route exact path="/" component={Login} />
+                      <Route path="/login" component={Login} />
                       <Route path="/registration" component={Registration} />
                       <Route path="/forgot-password" component={ForgotPassword} />
-                      <Route path="/meeting/:id" component={App} />
-                      <Route path="/meeting" component={ChooseRoom} />
+                      <Route path="/:id" component={App} />
+                      <Route path="/" component={ChooseRoom} />
                     </Switch>
                   </Suspense>
                 </Router>

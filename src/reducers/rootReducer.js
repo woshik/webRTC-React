@@ -14,17 +14,17 @@ import settings from './settings';
 import transports from './transports';
 
 export default combineReducers({
-	room,
-	me,
-	producers,
-	consumers,
-	transports,
-	peers,
-	lobbyPeers,
-	peerVolumes,
-	notifications,
-	chat,
-	toolarea,
-	files,
-	settings
+  room,
+  me,
+  producers,
+  consumers,
+  transports,
+  peers,
+  lobbyPeers,
+  peerVolumes,
+  notifications,
+  chat,
+  toolarea,
+  files,
+  settings,
 });

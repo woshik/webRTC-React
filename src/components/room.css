@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 /*! bulma.io v0.8.2 | MIT License | github.com/jgthms/bulma */
+@import url('https://unpkg.com/css.gg/icons/all.css');
 @keyframes spinAround {
   from {
     transform: rotate(0deg);
@@ -9,9 +10,22 @@
   }
 }
 
+:root {
+	--background-color: rgba(114, 119, 143, 1.0);
+
+	--peer-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+	--peer-border: 1px solid rgba(255, 255, 255, 0.15);
+	--peer-empty-avatar: url('../images/buddy.svg');
+	--peer-bg-color: rgba(42, 75, 88, 0.9);
+	--peer-video-bg-color: rgba(0, 0, 0, 0.75);
+
+	--active-speaker-border-color: rgba(255, 255, 255, 1.0);
+	--selected-peer-border-color: rgba(55, 126, 255, 1.0);
+}
+
 *,
-*::before,
-*::after {
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -399,6 +413,7 @@ html {
   -webkit-font-smoothing: antialiased;
   min-width: 300px;
   overflow-x: hidden;
+  overflow-y: scroll;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
 }
@@ -10235,186 +10250,8 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
-body {
-  font-family: 'Nunito', sans-serif;
-  min-height: 100vh;
-}
-
-.section {
-  padding: 2rem 1.5rem;
-}
-
-.authentication-form-wrapper {
-  text-align: center;
-}
-.authentication-form-wrapper h1 {
-  font-size: 2rem;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px #969696;
-}
-.authentication-form-wrapper .form-dash-divider {
-  height: 0.35rem;
-  width: 1.75rem;
-  background: rgba(255, 255, 255, 0.3);
-  margin: 0 auto 2rem auto;
-}
-.authentication-form-wrapper .control {
-  margin-bottom: 1.2rem;
-}
-.authentication-form-wrapper .no-margin-bottom {
-  margin-bottom: 0;
-}
-.authentication-form-wrapper input[type='email'],
-.authentication-form-wrapper input[type='text'],
-.authentication-form-wrapper input[type='password'] {
-  box-shadow: 0 0 12px rgba(33, 33, 33, 0.2);
-  color: #ffffff;
-  font-size: 1rem;
-  height: auto;
-  padding: 1rem 0 1rem 1.5rem;
-  border: 2px solid rgba(255, 255, 255, 0.05);
-}
-.authentication-form-wrapper input[type='email']:active,
-.authentication-form-wrapper input[type='email']:focus,
-.authentication-form-wrapper input[type='text']:active,
-.authentication-form-wrapper input[type='text']:focus,
-.authentication-form-wrapper input[type='password']:active,
-.authentication-form-wrapper input[type='password']:focus {
-  border: 2px solid white;
-  color: white;
-}
-.authentication-form-wrapper input[type='email']::placeholder,
-.authentication-form-wrapper input[type='text']::placeholder,
-.authentication-form-wrapper input[type='password']::placeholder {
-  color: rgba(255, 255, 255, 0.3);
-}
-.authentication-form-wrapper .hint a {
-  font-size: 0.8rem;
-  color: #fff;
-  text-decoration: underline;
-}
-.authentication-form-wrapper .hint a:hover {
-  text-decoration: none;
-}
-.authentication-form-wrapper .hint strong {
-  font-size: 0.8rem;
-  color: #fff;
-  margin-left: 10px;
-}
-.authentication-form-wrapper .authentication-link {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.3);
-  text-decoration: underline;
-  margin-right: 1rem;
-}
-.authentication-form-wrapper .authentication-link:hover {
-  text-decoration: none;
-}
-.authentication-form-wrapper .authentication-button {
-  box-shadow: 0 0 12px rgba(33, 33, 33, 0.2);
-}
-.authentication-form-wrapper .authentication-checkbox {
-  margin: 0 0 1.8rem 1.3rem;
-}
-.authentication-form-wrapper .switch input {
-  position: absolute;
-  opacity: 0;
-}
-.authentication-form-wrapper .switch {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 20px;
-  height: 0.6em;
-  width: 2em;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 1em;
-  cursor: pointer;
-}
-.authentication-form-wrapper .switch.active {
-  background: white;
-}
-.authentication-form-wrapper .switch div {
-  height: 1em;
-  width: 1em;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
-  -webkit-transition: all 300ms;
-  -moz-transition: all 300ms;
-  transition: all 300ms;
-  margin: -0.25rem 0 0 0;
-}
-.authentication-form-wrapper .switch input:checked + div {
-  -webkit-transform: translate3d(100%, 0, 0);
-  -moz-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
-}
-.authentication-form-wrapper .slider-checkbox-label {
-  margin-left: 1rem;
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 1rem;
-  text-shadow: 1px 1px 2px #969696;
-}
-.authentication-form-wrapper .form-textual-divider {
-  color: white;
-  font-size: 1rem;
-  text-shadow: 1px 1px 2px #969696;
-  text-transform: uppercase;
-  position: relative;
-  margin: 2rem auto 0 auto;
-  width: 90%;
-}
-.authentication-form-wrapper .form-textual-divider:before,
-.authentication-form-wrapper .form-textual-divider:after {
-  content: '';
-  position: absolute;
-  top: 0.65rem;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  width: 40%;
-}
-.authentication-form-wrapper .form-textual-divider:before {
-  left: 5px;
-}
-.authentication-form-wrapper .form-textual-divider:after {
-  right: 5px;
-}
-.authentication-form-wrapper .columns {
-  text-align: center;
-  margin-top: 1rem;
-}
-.authentication-form-wrapper .columns .button {
-  box-shadow: 0 0 12px rgba(33, 33, 33, 0.2);
-}
-@media (max-width: 768px) {
-  .authentication-form-wrapper .columns {
-    display: flex !important;
-  }
-}
-@media (max-width: 768px) {
-  .authentication-form-wrapper .columns .button {
-    font-size: 1.25rem;
-  }
-}
-.authentication-form-wrapper ion-icon {
-  color: #ffffff;
-  padding: 0 1.5rem;
-}
-.authentication-form-wrapper .form-simple-divider {
-  width: 95%;
-  margin: 2.5rem auto 1rem auto;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-}
-.authentication-form-wrapper .copyright {
-  text-align: center;
-  color: white;
-  font-size: 1rem;
-  text-shadow: 1px 1px 2px #969696;
-}
-
 .bg-pic {
-  background-image: url(./images/snowboard_bg_pic.jpg);
+  background-image: url(../images/snowboard_bg_pic.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
@@ -10425,7 +10262,7 @@ body {
 }
 
 .bg-gray-pattern {
-  background: url(./images/body_bg_pattern.png) repeat;
+  background: url(../images/body_bg_pattern.png) repeat;
 }
 
 .fullscreen {
@@ -10450,7 +10287,7 @@ body {
   background: -o-linear-gradient(30deg, #612fbe 0%, #4696e1 50%, #58e8f4 100%);
   background: -ms-linear-gradient(30deg, #612fbe 0%, #4696e1 50%, #58e8f4 100%);
   background: linear-gradient(30deg, #612fbe 0%, #4696e1 50%, #58e8f4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#612fbe', endColorstr='#58e8f4', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#612fbe', endColorstr='#58e8f4', GradientType=1);
   width: 33.75rem;
   min-height: 100vh;
   position: relative;
@@ -10609,6 +10446,7 @@ body {
 }
 
 .sidepane.collapsed {
+  position: fixed;
   z-index: 9;
   width: 8.2rem;
   text-align: center;
@@ -10616,6 +10454,17 @@ body {
 .sidepane.collapsed .icon-item-wrapper {
   padding: 0;
   margin-bottom: 1rem;
+  position: relative;
+}
+
+.sidepane.collapsed .icon-item-wrapper .primary-badge {
+  display: inline-block;
+  position: absolute;
+  right: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bolder;
+  top: 3px;
 }
 
 .meeting-option-details {
@@ -10768,6 +10617,136 @@ body {
 .meeting-option-details .chat-list-item .media-content small {
   font-size: 12px;
   color: #8f9aa2;
+}
+
+.meeting-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 0;
+}
+.meeting-container .meeting-participant {
+  position: relative;
+  overflow: hidden;
+  width: 27.25rem;
+  height: 17.5rem;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  margin: 5px;
+}
+.meeting-container .meeting-participant:hover .meeting-participant-footer {
+  display: flex;
+}
+.meeting-container .meeting-participant .level {
+  align-items: flex-end;
+}
+.meeting-container .meeting-participant .meeting-participant-footer {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.meeting-container .meeting-participant .user-tag-name {
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0.4rem;
+  z-index: 999;
+}
+.meeting-container .meeting-participant .meeting-participant-footer {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3.75rem;
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), black);
+}
+.meeting-container .meeting-participant .meeting-participant-footer .tag {
+  margin: 0 0 0.375rem 0.375rem;
+  padding: 0.375rem 1.2rem;
+}
+.meeting-container .meeting-participant .meeting-participant-footer button {
+  cursor: pointer;
+}
+.meeting-container .meeting-participant .meeting-participant-footer button ion-icon {
+  color: #ffffff;
+}
+.meeting-container .meeting-participant .meeting-participant-footer button .icon {
+  color: #ffffff;
+}
+.meeting-container .pinned {
+  width: 100%;
+  height: 100%;
+}
+.meeting-container .meeting-user-options {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.meeting-container .meeting-user-options .main-user-option {
+  cursor: pointer;
+  width: 3.375rem;
+  height: 3.375rem;
+  margin: 0 0.5rem;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+.meeting-container .meeting-user-options .main-user-option i {
+  font-size: 1.2rem;
+}
+.meeting-container .meeting-user-options .call {
+  background: #ff0000;
+  border-color: #ff0000;
+}
+.meeting-container .meeting-user-options .call i {
+  color: #ffffff;
+}
+
+.meeting-scrollable {
+  position: fixed;
+  right: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+html {
+  overflow: auto !important;
 }
 
 .is-transparent {

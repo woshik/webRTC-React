@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 var config = {
-  loginEnabled: false,
+  loginEnabled: true,
   developmentPort: 3443,
   productionPort: 443,
 
@@ -119,7 +119,7 @@ var config = {
   lockLastN: false,
   // Add file and uncomment for adding logo to appbar
   // logo       : 'images/logo.svg',
-  title: 'Multiparty meeting',
+  title: 'Wire Meeting',
   // Service & Support URL
   // if not set then not displayed on the about modals
   supportUrl: 'https://support.example.com',

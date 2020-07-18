@@ -104,7 +104,7 @@ const ChooseRoom = ({ classes }) => {
         }}
       >
         <DialogTitle>
-          {window.config.title ? window.config.title : 'Multiparty meeting'}
+          {window.config.title ? window.config.title : 'Wire Meeting'}
           <hr />
         </DialogTitle>
         <DialogContent>
@@ -137,7 +137,7 @@ const ChooseRoom = ({ classes }) => {
         </DialogContent>
 
         <DialogActions>
-          <Button component={Link} to={`/meeting/${roomId}`} variant="contained" color="secondary">
+          <Button component={Link} to={`/${roomId}`} variant="contained" color="secondary">
             <FormattedMessage id="label.chooseRoomButton" defaultMessage="Continue" />
           </Button>
         </DialogActions>

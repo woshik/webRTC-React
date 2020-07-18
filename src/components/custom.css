@@ -1,0 +1,5 @@
+.MuiTabs-scroller > span {
+  background-color: #16d0d8 !important;
+  height: 4px !important;
+  display: block;
+}

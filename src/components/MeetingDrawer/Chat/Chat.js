@@ -6,36 +6,30 @@ import ChatModerator from './ChatModerator';
 import MessageList from './MessageList';
 import ChatInput from './ChatInput';
 
-const styles = () =>
-	({
-		root :
-		{
-			display       : 'flex',
-			flexDirection : 'column',
-			width         : '100%',
-			height        : '100%',
-			overflowY     : 'auto'
-		}
-	});
+const styles = () => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    height: '100%',
+    overflowY: 'auto',
+  },
+});
 
-const Chat = (props) =>
-{
-	const {
-		classes
-	} = props;
+const Chat = (props) => {
+  const { classes } = props;
 
-	return (
-		<Paper className={classes.root}>
-			<ChatModerator />
-			<MessageList />
-			<ChatInput />
-		</Paper>
-	);
+  return (
+    <Paper className={classes.root}>
+      <ChatModerator />
+      <MessageList />
+      <ChatInput />
+    </Paper>
+  );
 };
 
-Chat.propTypes =
-{
-	classes : PropTypes.object.isRequired
+Chat.propTypes = {
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Chat);
