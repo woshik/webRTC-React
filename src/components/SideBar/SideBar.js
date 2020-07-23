@@ -74,17 +74,16 @@ function SideBar(props) {
         </span>
       </figure>
       <div className="meeting-additional-options">
-        <div className="icon-item-wrapper" onClick={() => toggleToolArea()}>
-          <div className="tooltip is-positioned-right">
-            <span>Drawer</span>
-          </div>
-          {unread > 0 ? <span className="primary-badge">{unread}</span> : ''}
-          <span className="button is-rounded is-medium is-clear icon-item">
-            <ion-icon class="icon" name="menu"></ion-icon>
-          </span>
-        </div>
-
         <div className="bottom-icons">
+          <div className="icon-item-wrapper" onClick={() => toggleToolArea()}>
+            <div className="tooltip is-positioned-right">
+              <span>Drawer</span>
+            </div>
+            {unread > 0 ? <span className="primary-badge">{unread}</span> : ''}
+            <span className="button is-rounded is-medium is-clear icon-item">
+              <ion-icon class="icon" name="menu"></ion-icon>
+            </span>
+          </div>
           <div
             className="icon-item-wrapper"
             onClick={() => {
@@ -125,23 +124,6 @@ function SideBar(props) {
             </span>
           </div>
 
-          {fullscreenEnabled && (
-            <div
-              className="icon-item-wrapper"
-              onClick={() => {
-                handleMenuClose();
-                onFullscreen();
-              }}
-            >
-              <div className="tooltip is-positioned-right">
-                <span>{fullscreen ? 'Leave Fullscreen' : 'Enter Fullscreen'}</span>
-              </div>
-              <span className="button is-rounded is-medium is-clear icon-item">
-                <ion-icon class="icon" name="scan"></ion-icon>
-              </span>
-            </div>
-          )}
-
           <div className="icon-item-wrapper" onClick={() => setSettingsOpen(!room.settingsOpen)}>
             <div className="tooltip is-positioned-right">
               <span>Settings</span>
@@ -175,11 +157,6 @@ function SideBar(props) {
             </span>
           </div>
         </div>
-        <figure className="image user-avatar is-64x64">
-          <span>
-            <img className="is-rounded" src={Avator} />
-          </span>
-        </figure>
       </div>
     </React.Fragment>
   );

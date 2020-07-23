@@ -12,15 +12,13 @@ const PADDING = 60;
 
 const styles = (theme) => ({
   root: {
+    float: 'left',
     width: '100%',
     height: '100%',
     display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
-    alignContent: 'center',
+    flexDirection: 'row',
   },
   hiddenToolBar: {
     paddingTop: 0,
@@ -117,25 +115,15 @@ class Democratic extends React.PureComponent {
     };
 
     return (
-      <div
-        className={classnames(
-          classes.root,
-          toolbarsVisible || permanentTopBar ? classes.showingToolBar : classes.hiddenToolBar,
-          buttonControlBar ? classes.buttonControlBar : null
-        )}
-        ref={this.peersRef}
-      >
-        <div className="meeting-participant">
-          <Me advancedMode={advancedMode} spacing={6} style={style} />
+      <div className={classes.root}>
+        <div className="meeting-participant" ref={this.peersRef}>
+          <Me advancedMode={advancedMode} />
         </div>
-
-        {spotlightsPeers.map((peer) => {
-          return (
-            <div className="meeting-participant" key={peer}>
-              <Peer advancedMode={advancedMode} id={peer} spacing={6} style={style} />;
-            </div>
-          );
-        })}
+        <div className="meeting-participant" ref={this.peersRef}>
+          {spotlightsPeers.map((peer) => {
+            return <Peer advancedMode={advancedMode} key={peer} id={peer} />;
+          })}
+        </div>
       </div>
     );
   }

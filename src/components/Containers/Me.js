@@ -447,6 +447,57 @@ const Me = (props) => {
                     </div>
                   )}
                 </Tooltip>
+                {me.browser.platform !== 'mobile' && (
+                  <Tooltip
+                    open={screenShareTooltipOpen}
+                    onClose={screenShareTooltipHandleClose}
+                    onOpen={screenShareTooltipHandleOpen}
+                    title={screenTip}
+                    placement="left"
+                  >
+                    {smallContainer ? (
+                      <div>
+                        <IconButton
+                          aria-label={intl.formatMessage({
+                            id: 'device.startScreenSharing',
+                            defaultMessage: 'Start screen sharing',
+                          })}
+                          className={classes.smallContainer}
+                          disabled={!canShareScreen || !me.canShareScreen || me.screenShareInProgress}
+                          color="primary"
+                          size="small"
+                          onClick={() => {
+                            if (screenState === 'off') roomClient.updateScreenSharing({ start: true });
+                            else if (screenState === 'on') roomClient.disableScreenSharing();
+                          }}
+                        >
+                          {(screenState === 'on' || screenState === 'unsupported') && <ScreenOffIcon />}
+                          {screenState === 'off' && <ScreenIcon />}
+                        </IconButton>
+                      </div>
+                    ) : (
+                      <div>
+                        <Fab
+                          aria-label={intl.formatMessage({
+                            id: 'device.startScreenSharing',
+                            defaultMessage: 'Start screen sharing',
+                          })}
+                          className={classes.fab}
+                          disabled={!canShareScreen || !me.canShareScreen || me.screenShareInProgress}
+                          color={screenState === 'on' ? 'primary' : 'default'}
+                          size="large"
+                          onClick={() => {
+                            if (screenState === 'off') roomClient.updateScreenSharing({ start: true });
+                            else if (screenState === 'on') roomClient.disableScreenSharing();
+                          }}
+                        >
+                          {(screenState === 'on' || screenState === 'unsupported') && <ScreenOffIcon />}
+                          {screenState === 'off' && <ScreenIcon />}
+                        </Fab>
+                      </div>
+                    )}
+                  </Tooltip>
+                )}
               </React.Fragment>
             </div>
           )}

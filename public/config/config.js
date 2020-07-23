@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 var config = {
-  loginEnabled: true,
+  loginEnabled: false,
   developmentPort: 3443,
   productionPort: 443,
 

@@ -24,6 +24,7 @@ import LockDialog from './AccessControl/LockDialog/LockDialog';
 import Settings from './Settings/Settings';
 import Help from './Controls/Help';
 import SideBar from './SideBar/SideBar';
+import ExtraVideo from './Controls/ExtraVideo';
 
 import './room.css';
 import './custom.css';
@@ -180,6 +181,8 @@ class Room extends React.PureComponent {
         </nav>
 
         {showNotifications && <Notifications />}
+
+        {room.extraVideoOpen && <ExtraVideo />}
 
         {room.lockDialogOpen && <LockDialog />}
 

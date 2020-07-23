@@ -213,7 +213,7 @@ function run() {
                 <Router basename={basePath}>
                   <Suspense fallback={<LoadingView />}>
                     <Switch>
-                      <Route path="/login" component={Login} />
+                      <Route path="/auth/login" component={Login} />
                       <Route path="/registration" component={Registration} />
                       <Route path="/forgot-password" component={ForgotPassword} />
                       <Route path="/:id" component={App} />

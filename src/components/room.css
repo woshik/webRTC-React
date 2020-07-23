@@ -10632,7 +10632,7 @@ label.panel-block:hover {
 }
 .meeting-container .meeting-participant {
   position: relative;
-  overflow: hidden;
+  
   width: 27.25rem;
   height: 17.5rem;
   order: 0;

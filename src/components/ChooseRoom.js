@@ -14,6 +14,8 @@ import CookieConsent from 'react-cookie-consent';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import MuiDialogActions from '@material-ui/core/DialogActions';
+import Grid from '@material-ui/core/Grid';
+import logo from '../images/wire2-logo.png';
 
 const styles = (theme) => ({
   root: {
@@ -64,6 +66,10 @@ const styles = (theme) => ({
   green: {
     color: 'rgba(0, 153, 0, 1)',
   },
+  siteLogo: {
+    width: '30%',
+    display: 'block',
+  },
 });
 
 const DialogTitle = withStyles(styles)((props) => {
@@ -103,10 +109,10 @@ const ChooseRoom = ({ classes }) => {
           paper: classes.dialogPaper,
         }}
       >
-        <DialogTitle>
-          {window.config.title ? window.config.title : 'Wire Meeting'}
-          <hr />
-        </DialogTitle>
+        <Grid container direction="row" justify="center" alignItems="center">
+          <img alt="wire logo" variant="square" src={logo} className={classes.siteLogo}></img>
+        </Grid>
+        <hr />
         <DialogContent>
           <DialogContentText gutterBottom>
             <FormattedMessage
